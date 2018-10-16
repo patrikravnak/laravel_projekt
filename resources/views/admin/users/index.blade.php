@@ -22,8 +22,9 @@
         <td>{{$user->name}}</td>
         <td>{{$user->email}}</td>
         <td>{{$user->role->name}}</td>
-        <td>{{$user->created_at->diffForHumans()}}</td>
-        <td>@if(isset($user->is_active))
+        <td>{{$user->created_at->format('d.m.Y')}}</td>
+        <td>
+            @if(isset($user->is_active))
                 @if($user->is_active)
                     Aktiven
                 @else
